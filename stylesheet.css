@@ -1,0 +1,25 @@
+.header-title {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.header-button {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+  .grid-container{
+    
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    height: 500px; /* default size */
+    width: 500px; /* default size */
+    border-style: solid;
+  border-color: red;
+    
+}
+
+.item{
+    float: left; /* forces items to start left */
+}
