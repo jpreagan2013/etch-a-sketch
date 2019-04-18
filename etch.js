@@ -58,6 +58,7 @@ btn.addEventListener('click', function(e){
 });
 
 function getRandomColor() {
+    //color: hsl(0, 0%, 100%);
     var letters = '0123456789ABCDEF';
     var color = '#';
     for (var i = 0; i < 6; i++) {
@@ -67,9 +68,22 @@ function getRandomColor() {
   }
   
   function setRandomColor(itemList) {
+
     itemList.forEach((item) => {
+        let firstRun = true;
+        let colorH = Math.floor(Math.random() * 361);
+        let colorS = Math.floor(Math.random() * 101);
+        let colorL = 50;
         item.addEventListener('mouseover', (e) => {
-            e.target.style.background = getRandomColor();
+            if (firstRun) {
+                let colorL = 50;
+                e.target.style.background = `hsl(${colorH}, ${colorS}%, ${colorL}%)`;
+            } else {
+                colorL = colorL + -10;
+                e.target.style.background = `hsl(${colorH}, ${colorS}%, ${colorL}%)`;
+            }
+            console.log(colorL);
+            firstRun = false;
         });
     })
   }
